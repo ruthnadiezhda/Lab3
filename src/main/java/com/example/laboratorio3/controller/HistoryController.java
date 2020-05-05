@@ -1,6 +1,8 @@
 package com.example.laboratorio3.controller;
 
 
+import com.example.laboratorio3.repository.EmployeesRepository;
+import com.example.laboratorio3.repository.JobHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HistoryController {
 
     @Autowired
-    EmployeesRepository employeesRepository;
+    JobHistoryRepository jobHistoryRepository;
 
     @GetMapping(value = {""})
     public String listaEmpleados(Model model) {
 
-        model.addAttribute("listaProductos", employeesRepository.findAll());
+        model.addAttribute("listaHistory", jobHistoryRepository.findAll());
 
-        return "product/list";
+        return "history/listar";
     }
 
 
