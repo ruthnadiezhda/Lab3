@@ -9,9 +9,32 @@
         <title>Lista de Empleados</title>
 </head>
 <body>
+
     <div class="container">
         <h1>Lista de Empleados</h1>
-        <a class="btn btn-primary mt-4 mb-4" th:href="@{}"></a>                 <!-- COMPLETAR -->
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{empleado/nuevo}"></a>
+
+
+
+        <!-- COMPLETAR -->
+
+        <!--
+
+        <form method="post" th:action="@{'/empleado/buscarEmpleado'}">
+
+            <input name="country_id" type="text" class="form-control mb-3" placeholder="Nombre" />
+            <input name="country_name" type="text" class="form-control mb-3" placeholder="Apellido" />
+            <input name="region_id" type="text" class="form-control mb-3" placeholder="" />
+
+            <button type="submit" class="btn btn-primary">Buscar</button>
+
+        </form>
+
+        -->
+
+
+
+
         <form class="input-group mb-lg-3" method="post" th:action="@{}">                <!-- COMPLETAR -->
             <!-- COMPLETAR -->
             <div class="input-group-append">
@@ -21,16 +44,39 @@
 
         <!-- COMPLETAR -->
         <!-- COMPLETAR -->
-            <table class="table table-sm" th:if="${}">
-                <thead>
-                <tr>
-                    <!-- COMPLETAR -->
-                </tr>
-                </thead>
-                <tbody>
-                <!-- COMPLETAR -->
-                </tbody>
-            </table>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>PUESTO</th>
+                <th>DEPARTAMENTO</th>
+                <th>CIUDAD</th>
+                <th></th>
+            </tr>
+            <tr th:each="empleado, vEstado : ${listaEmpleados}">
+                <td th:text="${vEstado.index + 1}"></td>
+                <td th:text="${empleado.first_name}"></td>
+                <td th:text="${empleado.last_name}"></td>
+                <td th:text="${empleado.job.job_tittle}"></td>
+                <td th:text="${empleado.department.department_name}"></td>
+                <td th:text="${empleado.department.location.city}"></td>
+                <td>
+
+                    <a th:href="@{'/empleado/editar?id=' + ${empleado.employee_id}}" class="btn btn-warning"> Editar </a>
+
+                    <a th:href="@{'/empleado/borrar?id=' + ${empleado.employee_id}}" class="btn btn-danger"> Borrar </a>
+
+
+                </td>
+
+
+            </tr>
+        </table>
+
+
+
+
         </div>
     </body>
 </html>
