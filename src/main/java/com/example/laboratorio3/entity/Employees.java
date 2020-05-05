@@ -16,6 +16,8 @@ public class Employees {
     String last_name;
     @Column(nullable = false)
     String email;
+    String password;
+    Integer enabled;
     String phone_number;
     @Column(nullable = false)
     Date hire_date;
