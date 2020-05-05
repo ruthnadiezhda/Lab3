@@ -24,6 +24,11 @@ public interface EmployeesRepository extends JpaRepository<Employees,Integer> {
 
 
     @Query()
+
+    //Estaba haciendo el query --> SELECT d.department_name,
+    //FROM hr.locations l
+    //INNER JOIN hr.departments d on (l.location_id = d.location_id)
+    //INNER JOIN hr.jobs j (
     public List <Employees> encontrarPorSueldo(Job job);
 
 
