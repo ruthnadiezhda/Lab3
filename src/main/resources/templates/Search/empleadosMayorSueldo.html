@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/general.html :: cabecera(titulo ='Empleados con Sueldo Mayor a 15000')">
+</head>
+<body>
+</div>
+<h2>Empleados con Sueldo mas de 15000</h2>
+<table class="table table-sm">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha de Inicio</th>
+        <th>Fecha Fin</th>
+        <th>Puesto</th>
+    </tr>
+    <tr th:each="empleadoPorSueldo : ${listaEmpleadosMayorSueldo}">
+        <td th:text="${empleadoPorSueldo.getNombre()}"></td>
+        <td th:text="${empleadoPorSueldo.getApellido()}"></td>
+        <td th:text="${empleadoPorSueldo.getFechaInicio()}"></td>
+        <td th:text="${empleadoPorSueldo.getFechaFin()}"></td>
+        <td th:text="${empleadoPorSueldo.getPuesto()}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
