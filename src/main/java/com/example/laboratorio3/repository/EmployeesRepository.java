@@ -32,8 +32,3 @@ public interface EmployeesRepository extends JpaRepository<Employees,Integer> {
     public List <Employees> encontrarPorSueldo(Job job);
 
 
-
-
-//COMPLETAR
-
-}

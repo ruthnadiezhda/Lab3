@@ -16,8 +16,8 @@ public class Employees {
     String last_name;
     @Column(nullable = false)
     String email;
-    String password;
-    Integer enabled;
+    private String password;
+    private Integer enabled;
     String phone_number;
     @Column(nullable = false)
     Date hire_date;
@@ -120,5 +120,21 @@ public class Employees {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Integer enabled) {
+        this.enabled = enabled;
     }
 }

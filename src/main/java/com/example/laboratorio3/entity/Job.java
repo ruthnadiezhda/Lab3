@@ -1,13 +1,16 @@
 package com.example.laboratorio3.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="jobs")
 public class Job {
 
+
+    @Id
+    @JoinColumn(name="job_id")
     String job_id;
     String job_tittle;
     Integer min_salary;
